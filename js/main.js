@@ -73,7 +73,6 @@ class Household {
         let checked = [];
         while (currentHousehold != null) {
             if (currentHousehold.hasElectricityOnCurrentHousehold()) {
-                console.log(`hasElectricityOnCurrentHousehold it's true`);
                 return true;
             };
 
@@ -85,7 +84,6 @@ class Household {
             currentHousehold = currentHousehold._coupledHousehold;
         };
 
-        console.log(`Doesn't have`);
         return false;
     }
 
