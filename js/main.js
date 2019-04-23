@@ -71,19 +71,15 @@ class Household {
     hasElectricityInNetwork() {
         let currentHousehold = this;
         let checked = [];
-        q: while (currentHousehold != null) {
+        while (currentHousehold != null) {
             if (currentHousehold.hasElectricityOnCurrentHousehold()) {
                 console.log(`hasElectricityOnCurrentHousehold it's true`);
                 return true;
             };
 
-            for (let i = 0; i < checked.length; i++) {
-                console.log(currentHousehold);
-                if (currentHousehold._coupledHousehold === null || checked[i] === currentHousehold._coupledHousehold) {
-                    console.log(`breaked`);
-                    break q;
-                }
-            };
+            if(checked.includes(currentHousehold._coupledHousehold) || currentHousehold._coupledHousehold === null) {
+                break;
+            }
 
             checked.push(currentHousehold);
             currentHousehold = currentHousehold._coupledHousehold;
