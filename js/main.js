@@ -76,7 +76,7 @@ class Household {
                 return true;
             };
 
-            if(checked.includes(currentHousehold._coupledHousehold) || currentHousehold._coupledHousehold === null) {
+            if(checked.includes(currentHousehold._coupledHousehold)) {
                 break;
             }
 
